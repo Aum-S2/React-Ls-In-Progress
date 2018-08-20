@@ -35,7 +35,7 @@ class App extends PureComponent {
 
   state = {
     cars: [
-      { id: 'yaids01', name: 'yaris', yearReleased: 2009 },
+      { id: 'yaids01', name: 'yaris', yearReleased: 2001 },
       { id: 'yaids02', name: 'civic', yearReleased: 2006 },
       { id: 'yaids03', name: 'GTR', yearReleased: 1999 }
     ],
