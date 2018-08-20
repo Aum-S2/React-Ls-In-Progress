@@ -1,0 +1,24 @@
+.Car {
+  width:  60%;
+  margin: 12px auto;
+  border: 1px solid cornflowerblue;
+  box-shadow: 0 0 4px 1px darkblue;
+  padding: 16px;
+  text-align: center;
+  color: black;
+}
+
+input {
+  border: 1px solid bisque;
+  box-shadow: 0 0 4px 1px indigo;
+  padding: 8px 12px;
+  text-align: center;
+}
+
+@media (min-width: 500px) {
+  .Car {
+    width: 450px;
+  }
+}
+
+
