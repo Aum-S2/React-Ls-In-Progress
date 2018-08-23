@@ -18,18 +18,18 @@ class Car extends Component {
 
   render() {
     console.log('[Car.js] Inside render()');
-    /* return (
+    return (
       <div className={classes.Car}>
         <p onClick={this.props.click}>this car is {this.props.name} and been released in year {this.props.yearReleased}</p>
         <p>{this.props.children}</p>
         <input type='text' onChange={this.props.changed} value={this.props.name} />
       </div>
-    ) */
-    return [
-      <p onClick={this.props.click}>this car is {this.props.name} and been released in year {this.props.yearReleased}</p>,
-      <p>{this.props.children}</p>,
-      <input type='text' onChange={this.props.changed} value={this.props.name} />
-    ]
+    )
+    /* return [
+      <p key="1" onClick={this.props.click}>this car is {this.props.name} and been released in year {this.props.yearReleased}</p>,
+      <p key="2">{this.props.children}</p>,
+      <input key="3" type='text' onChange={this.props.changed} value={this.props.name} />
+    ] */
   }
 
 };
