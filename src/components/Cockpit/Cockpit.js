@@ -19,7 +19,7 @@ const Cockpit = (props) => {
   return (
     <div className={classes.Cockpit}>
       <h1>{props.appTitle}</h1>
-      <p className={assignClasses.join(' ')}>could that be</p>
+      <p className={assignClasses.join(' ')}>changing the size of text</p>
       <button
         className={btnClass}
         onClick={props.clicked}>Switch</button>
