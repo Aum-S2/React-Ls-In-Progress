@@ -4,7 +4,6 @@ import Cars from '../components/Cars/Cars';
 import Cockpit from '../components/Cockpit/Cockpit';
 
 
-
 class App extends PureComponent {
   constructor(props) {
     super(props);
