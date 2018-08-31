@@ -40,7 +40,8 @@ class App extends PureComponent {
       { id: 'yaids02', name: 'civic', yearReleased: 2006 },
       { id: 'yaids03', name: 'GTR', yearReleased: 1999 }
     ],
-    showCars: false
+    showCars: false,
+    toggleClicked: 0
   }
 
 
@@ -72,7 +73,10 @@ class App extends PureComponent {
 
   toggleCarsHandler = () => {
     const doesShow = this.state.showCars;
-    this.setState({ showCars: !doesShow });
+    this.setState( (prevState, props) =>{ 
+      return{showCars: !doesShow, 
+        toggleClicked: prevState.toggleClicked + 1 }
+    });
   }
 
 

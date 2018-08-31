@@ -92,5 +92,8 @@
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "devDependencies": {
+    "uglify-js-brunch": "^2.10.0"
   }
 }
