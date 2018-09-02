@@ -17,6 +17,9 @@ class Car extends Component {
 
   componentDidMount() {
     console.log('[Car.js] Inside componentDidMount()');
+    if (this.props.position === 0) {
+      this.inputElement.focus();
+    }
   }
 
   render() {
@@ -25,7 +28,11 @@ class Car extends Component {
       <ReactAux>
         <p onClick={this.props.click}>this car is {this.props.name} and been released in year {this.props.yearReleased}</p>
         <p>{this.props.children}</p>
-        <input type='text' onChange={this.props.changed} value={this.props.name} />
+        <input
+          ref={(inputt) => { this.inputElement = inputt }}
+          type='text'
+          onChange={this.props.changed}
+          value={this.props.name} />
       </ReactAux>
     )
     /* return [

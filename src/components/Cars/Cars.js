@@ -41,6 +41,7 @@ class Cars extends PureComponent {
       return <Car
         click={() => this.props.clicked(index)}
         name={car.name}
+        position={index}
         yearReleased={car.yearReleased}
         key={car.id}
         changed={(event) => this.props.changed(event, car.id)} />
