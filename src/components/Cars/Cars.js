@@ -5,6 +5,7 @@ class Cars extends PureComponent {
   constructor(props) {
     super(props);
     console.log('[Cars.js] Inside Constructor', props);
+    this.lastCarRef = React.createRef();
   }
 
   componentWillMount() {
@@ -13,6 +14,7 @@ class Cars extends PureComponent {
 
   componentDidMount() {
     console.log('[Cars.js] Inside componentDidMount()');
+    this.lastCarRef.current.focus();
   }
 
   componentWillReceiveProps(nextProps) {
@@ -43,6 +45,7 @@ class Cars extends PureComponent {
         name={car.name}
         position={index}
         yearReleased={car.yearReleased}
+        ref={this.lastCarRef}
         key={car.id}
         changed={(event) => this.props.changed(event, car.id)} />
     });
