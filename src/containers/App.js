@@ -6,6 +6,8 @@ import ReactAux from '../hoc/ReactAux';
 import withClass from '../hoc/WithClass';
 
 
+export const AuthContext = React.createContext(false);
+
 class App extends PureComponent {
   constructor(props) {
     super(props);
@@ -92,8 +94,7 @@ class App extends PureComponent {
       cars = <Cars
         cars={this.state.cars}
         clicked={this.deleteCarHandler}
-        changed={this.nameChangedHandler}
-        isAuthenticated={this.state.authenticated} />;
+        changed={this.nameChangedHandler} />;
     }
 
     return (
@@ -105,7 +106,9 @@ class App extends PureComponent {
           cars={this.state.cars}
           login={this.loginHandler}
           clicked={this.toggleCarsHandler} />
-        {cars}
+          <AuthContext.Provider value={this.state.authenticated}>
+            {cars}
+          </AuthContext.Provider>
       </ReactAux>
     );
   }

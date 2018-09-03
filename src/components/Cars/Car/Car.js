@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classes from './Car.css';
 import withClass from '../../../hoc/WithClass';
 import ReactAux from '../../../hoc/ReactAux';
-
+import { AuthContext } from '../../../containers/App';
 
 class Car extends Component {
   constructor(props) {
@@ -31,7 +31,9 @@ class Car extends Component {
     console.log('[Car.js] Inside render()');
     return (
       <ReactAux>
-        {this.props.authenticated ? <p>im authenticated!</p>: null}
+        <AuthContext.Consumer>
+          {auth => auth ? <p>im authenticated!</p> : null}
+        </AuthContext.Consumer>
         <p onClick={this.props.click}>this car is {this.props.name} and been released in year {this.props.yearReleased}</p>
         <p>{this.props.children}</p>
         <input
