@@ -29,7 +29,26 @@ class App extends PureComponent {
   } */
 
   componentWillUpdate(nextProps, nextState) {
-    console.log('[UPDATE Ca App.js] Inside componentWillUpdate', nextProps, nextState);
+    console.log(
+      '[UPDATE Ca App.js] Inside componentWillUpdate',
+      nextProps,
+      nextState
+    );
+  }
+
+  static getDerivedStateFromProps(nextProps, prevState) {
+    console.log(
+      '[UPDATE Ca App.js] Inside getDerivedStateFromProps',
+      nextProps,
+      prevState
+    );
+    return prevState;
+  }
+
+  getSnapshotBeforeUpdate() {
+    console.log(
+      '[UPDATE Ca App.js] Inside getSnapshotBeforeUpdate'
+    );
   }
 
   componentDidUpdate() {
@@ -76,14 +95,16 @@ class App extends PureComponent {
 
   toggleCarsHandler = () => {
     const doesShow = this.state.showCars;
-    this.setState( (prevState, props) =>{ 
-      return{showCars: !doesShow, 
-        toggleClicked: prevState.toggleClicked + 1 }
+    this.setState((prevState, props) => {
+      return {
+        showCars: !doesShow,
+        toggleClicked: prevState.toggleClicked + 1
+      }
     });
   }
 
   loginHandler = () => {
-    this.setState ({authenticated: true});
+    this.setState({ authenticated: true });
   }
 
   render() {
@@ -106,9 +127,9 @@ class App extends PureComponent {
           cars={this.state.cars}
           login={this.loginHandler}
           clicked={this.toggleCarsHandler} />
-          <AuthContext.Provider value={this.state.authenticated}>
-            {cars}
-          </AuthContext.Provider>
+        <AuthContext.Provider value={this.state.authenticated}>
+          {cars}
+        </AuthContext.Provider>
       </ReactAux>
     );
   }
