@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from './Cockpit.css';
-import Aux from '../../hoc/ReactAux';
+import ReactAux from '../../hoc/ReactAux';
 
 const Cockpit = (props) => {
   const assignClasses = [];
@@ -17,14 +17,14 @@ const Cockpit = (props) => {
   }
 
   return (
-      <Aux>
+      <ReactAux>
       <h1>{props.appTitle}</h1>
       <p className={assignClasses.join(' ')}>changing the size of text</p>
       <button
         className={btnClass}
         onClick={props.clicked}>Switch</button>
       <button onClick={props.login}>Log In</button>
-      </Aux>
+      </ReactAux>
   );
 };
 

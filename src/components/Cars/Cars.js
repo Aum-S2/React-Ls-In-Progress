@@ -46,6 +46,7 @@ class Cars extends PureComponent {
         position={index}
         yearReleased={car.yearReleased}
         ref={this.lastCarRef}
+        authenticated={this.props.isAuthenticated}
         key={car.id}
         changed={(event) => this.props.changed(event, car.id)} />
     });

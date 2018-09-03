@@ -41,7 +41,8 @@ class App extends PureComponent {
       { id: 'yaids03', name: 'GTR', yearReleased: 1999 }
     ],
     showCars: false,
-    toggleClicked: 0
+    toggleClicked: 0,
+    authenticated: false
   }
 
 
@@ -79,6 +80,9 @@ class App extends PureComponent {
     });
   }
 
+  loginHandler = () => {
+    this.setState ({authenticated: true});
+  }
 
   render() {
     console.log('[App.js] Inside Render');
@@ -88,7 +92,8 @@ class App extends PureComponent {
       cars = <Cars
         cars={this.state.cars}
         clicked={this.deleteCarHandler}
-        changed={this.nameChangedHandler} />;
+        changed={this.nameChangedHandler}
+        isAuthenticated={this.state.authenticated} />;
     }
 
     return (
@@ -98,6 +103,7 @@ class App extends PureComponent {
           appTitle={this.props.title}
           showCars={this.state.showCars}
           cars={this.state.cars}
+          login={this.loginHandler}
           clicked={this.toggleCarsHandler} />
         {cars}
       </ReactAux>

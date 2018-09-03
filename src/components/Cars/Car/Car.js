@@ -31,6 +31,7 @@ class Car extends Component {
     console.log('[Car.js] Inside render()');
     return (
       <ReactAux>
+        {this.props.authenticated ? <p>im authenticated!</p>: null}
         <p onClick={this.props.click}>this car is {this.props.name} and been released in year {this.props.yearReleased}</p>
         <p>{this.props.children}</p>
         <input
